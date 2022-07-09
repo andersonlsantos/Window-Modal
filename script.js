@@ -10,16 +10,20 @@ function hidden(add){
     }
 }
 
-const controlClick = () => {
-    hidden('block')
-}
+const controlClick = () => hidden('block')
 
-const controlClick2 = () => {
-    hidden('none')
-}
+const controlClick2 = () => hidden('none')
+
+const controlClick3 = () => hidden('none')
+
+document.onkeydown = e => {
+    if(e.key === 'Escape') hidden('none')
+} 
 
 for(let cont = 0; cont < sellAll('.show-modal').length; cont++){
     sellAll('.show-modal')[cont].addEventListener('click', controlClick)
 }
 
 sell('.close-modal').addEventListener('click', controlClick2)
+
+sell('.hidden').addEventListener('mouseleave', controlClick3)
